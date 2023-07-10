@@ -9,7 +9,7 @@ buttons:
     emoji: 🙌
     text: Claim
   close:
-    emoji: ✖️
+    emoji: ❎
     text: Close
   confirm_open:
     emoji: ✅
@@ -244,6 +244,16 @@ commands:
           name: member
       transferred: 📨 {user} has transferred this ticket to {to}.
       transferred_from: 📨 {user} has transferred this ticket from {from} to {to}.
+    rename:
+      description: Rename a ticket
+      name: rename
+      options:
+        name:
+          description: The new name of the ticket
+          name: name
+      success:
+        description: This ticket has been renamed to `{name}`.
+        title: ✅ Renamed
   user:
     create:
       name: Create ticket for user
