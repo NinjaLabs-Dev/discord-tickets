@@ -42,21 +42,53 @@ module.exports = class TransferSlashCommand extends SlashCommand {
 
 		const member = interaction.options.getMember('member', true);
 
-		let ticket = await client.prisma.ticket.findUnique({ where: { id: interaction.channel.id } });
-		const from = ticket.createdById;
-
-		ticket = await client.prisma.ticket.update({
-			data: {
-				createdBy: {
-					connectOrCreate: {
-						create: { id: member.id },
-						where: { id: member.id },
-					},
-				},
+		const ticket = await client.prisma.ticket.findUnique({
+			include: {
+				category: true,
+				guild: true,
 			},
-			include: { guild: true },
 			where: { id: interaction.channel.id },
 		});
+
+		const from = ticket.createdById;
+
+		const channelName = ticket.category.channelName
+			.replace(/{+\s?(user)?name\s?}+/gi, member.user.username)
+			.replace(/{+\s?(nick|display)(name)?\s?}+/gi, member.displayName)
+			.replace(/{+\s?num(ber)?\s?}+/gi, ticket.number === 1488 ? '1487b' : ticket.number);
+
+		await Promise.all([
+			client.prisma.ticket.update({
+				data: {
+					createdBy: {
+						connectOrCreate: {
+							create: { id: member.id },
+							where: { id: member.id },
+						},
+					},
+				},
+				where: { id: interaction.channel.id },
+			}),
+			interaction.channel.edit({
+				name: channelName,
+				topic: `${member.toString()}${ticket.topic?.length > 0 ? ` | ${decrypt(ticket.topic)}` : ''}`,
+			}),
+			interaction.channel.permissionOverwrites.edit(
+				member,
+				{
+					AttachFiles: true,
+					EmbedLinks: true,
+					ReadMessageHistory: true,
+					SendMessages: true,
+					ViewChannel: true,
+				},
+			),
+		]);
+
+		const $category = client.tickets.$count.categories[ticket.categoryId];
+		$category[from]--;
+		$category[member.id] ||= 0;
+		$category[member.id]++;
 
 		await interaction.editReply({
 			embeds: [
@@ -71,17 +103,5 @@ module.exports = class TransferSlashCommand extends SlashCommand {
 			],
 		});
 
-		await interaction.channel.setTopic(`${member.toString()}${ticket.topic?.length > 0 ? ` | ${decrypt(ticket.topic)}` : ''}`);
-
-		await interaction.channel.permissionOverwrites.edit(
-			member,
-			{
-				AttachFiles: true,
-				EmbedLinks: true,
-				ReadMessageHistory: true,
-				SendMessages: true,
-				ViewChannel: true,
-			},
-		);
 	}
 };

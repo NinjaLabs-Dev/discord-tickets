@@ -1,3 +1,65 @@
+## [4.0.9](https://github.com/discord-tickets/bot/compare/v4.0.8...v4.0.9) (2023-08-25)
+
+
+### Bug Fixes
+
+* `npx` workaround for PebbleHost ([4a2f85e](https://github.com/discord-tickets/bot/commit/4a2f85e9eb4361a0188a70f8ff3155d8d1e02826))
+* **🚨 security:** anyone with the channel ID could read transcripts ([b2790fc](https://github.com/discord-tickets/bot/commit/b2790fca40e55b88e768ae608c01c8d66d77beea))
+* edit channel name when transferring (closes [#470](https://github.com/discord-tickets/bot/issues/470)) ([77e5b45](https://github.com/discord-tickets/bot/commit/77e5b45aa8938039374a436c2886a8927d5c9cda))
+* **i18n:** space in command name ([2abd9cc](https://github.com/discord-tickets/bot/commit/2abd9cc0086b04ccba7185bf6ca43676fbbe91b1))
+* stale notification pinging staff instead of creator (closes [#459](https://github.com/discord-tickets/bot/issues/459)) ([59a6358](https://github.com/discord-tickets/bot/commit/59a6358b37d7b790cca1daee94fdcdf2a1987865))
+* update counters when transferring (closes [#468](https://github.com/discord-tickets/bot/issues/468)) ([d1e30ce](https://github.com/discord-tickets/bot/commit/d1e30ce069c4999a82b2381df39fc3d613cd06de))
+
+
+### Features
+
+* **i18n:** update Dutch translations [skip ci] ([e22f9bc](https://github.com/discord-tickets/bot/commit/e22f9bcf625484f9504a6f85d2593dd1cd57371f))
+* **i18n:** update Polish translations [skip ci] ([fb7a11f](https://github.com/discord-tickets/bot/commit/fb7a11fc78c3f48e01ad2671d9efa59e00f17748))
+
+
+
+## [4.0.8](https://github.com/discord-tickets/bot/compare/v4.0.7...v4.0.8) (2023-07-30)
+
+
+### Bug Fixes
+
+* 🤦‍♂️ inflated ticket count and negative response times in stats ([32697c6](https://github.com/discord-tickets/bot/commit/32697c6d13fcd46eb755f83b9ce2e9e972a655ab))
+* **🚨 security:** being able to close tickets from other servers (closes [#466](https://github.com/discord-tickets/bot/issues/466)) ([8a8bc2b](https://github.com/discord-tickets/bot/commit/8a8bc2bebe094e7b8eb8b2311fadcac984f60969))
+* **i18n:** lowercase names [skip ci] ([0597997](https://github.com/discord-tickets/bot/commit/05979972fe7002a6a2ca527f0887ca2d62671e48))
+* keep priority when moving (closes [#467](https://github.com/discord-tickets/bot/issues/467)) ([34b5090](https://github.com/discord-tickets/bot/commit/34b509057519293d188043502b922d583fb7505d))
+
+
+### Features
+
+* **i18n:** add Polish translations [skip ci] ([e4fff0c](https://github.com/discord-tickets/bot/commit/e4fff0cba5168425e1264b3e2ffd79a6489faa80))
+* **i18n:** update Czech translations [skip ci] ([d32b08c](https://github.com/discord-tickets/bot/commit/d32b08c184c934f2ca0dea26b7b7050bbff163fe))
+* **i18n:** update Polish translations [skip ci] ([a1be71c](https://github.com/discord-tickets/bot/commit/a1be71c5d7002da5d5e3a6fba45906dd73256b3a))
+* **i18n:** update Polish translations [skip ci] ([c23530f](https://github.com/discord-tickets/bot/commit/c23530f962b20d637d5ca27781eee5df2fd89ad5))
+* **i18n:** update Polish translations [skip ci] ([09ff025](https://github.com/discord-tickets/bot/commit/09ff025bf3522f531f10bebc143eb7ba8d71c01a))
+* **i18n:** update Spanish translations [skip ci] ([e91d1cc](https://github.com/discord-tickets/bot/commit/e91d1ccb2af596de5af54995e2ae2e333a0eebf9))
+
+
+
+## [4.0.7](https://github.com/discord-tickets/bot/compare/v4.0.6...v4.0.7) (2023-07-13)
+
+
+### Bug Fixes
+
+* **i18n:** lowercase names [skip ci] ([b782326](https://github.com/discord-tickets/bot/commit/b7823266ffdc6a13edc7b9f814b55f755369f9c8))
+* **i18n:** shorten Hungarian command name ([65ce04d](https://github.com/discord-tickets/bot/commit/65ce04def227fff11db0c4ec9ee83c3cec0997a7))
+
+
+### Features
+
+* **i18n:** update Hungarian translations [skip ci] ([560ab78](https://github.com/discord-tickets/bot/commit/560ab786bbe05614d8c53dba6889856aa4a2b6e8))
+* **i18n:** update Spanish translations [skip ci] ([bd063c4](https://github.com/discord-tickets/bot/commit/bd063c465523e36098afe1d0fdcbf72691774812))
+* **i18n:** update Spanish translations [skip ci] ([60e7447](https://github.com/discord-tickets/bot/commit/60e744731928fa2795f6a24650d36dcdd5fb247d))
+* **i18n:** update Spanish translations [skip ci] ([ffc44bf](https://github.com/discord-tickets/bot/commit/ffc44bf7ce1ba5d78e188d5844c4138f3cded813))
+* **i18n:** update Spanish translations [skip ci] ([0270402](https://github.com/discord-tickets/bot/commit/0270402bd9a7c15521919721fa9d58a55662ca95))
+* stats houston v4 ([4b4dcd2](https://github.com/discord-tickets/bot/commit/4b4dcd236eece95dd420700d3afcf917dbc68d49))
+
+
+
 ## [4.0.6](https://github.com/discord-tickets/bot/compare/v4.0.5...v4.0.6) (2023-07-02)
 
 
